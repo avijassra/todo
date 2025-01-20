@@ -20,6 +20,10 @@ class Task(BaseModel):
     title: str
     description: str
 
+@app.get("/message/{id}")
+async def get_message(id: int):
+    return f"hello world - {id}"
+
 # Routes for Users
 @app.post("/users/", status_code=201)
 async def create_user(user: User):
